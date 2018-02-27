@@ -4,6 +4,7 @@ new Button({
   left: 0, top:0,
   text: 'Get'
 }).on('select', () => {
+  video.top = 100;
 
 }).appendTo(ui.contentView);
 
