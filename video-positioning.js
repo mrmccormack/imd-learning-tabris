@@ -2,7 +2,7 @@ const {Button, Video, ui} = require('tabris');
 
 new Button({
   left: 0, top:0,
-  text: 'Get'
+  text: 'Try to hide video!'
 }).on('select', () => {
   video.top = 100;
 
