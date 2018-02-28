@@ -44,7 +44,8 @@ console.log (IMAGE_PATH);
     top: 'prev() 10',
     text: 'Reset1',
     // for some reason, constant and image no work???
-    image: 'https://github.com/mrmccormack/imd-learning-tabris/blob/master/images/card.png?raw=true'
+    image: 'https://github.com/mrmccormack/imd-learning-tabris/blob/master/images/card.png?raw=true',
+
   })
   .on('select', () => {
 console.log ('you pressed reset1');
