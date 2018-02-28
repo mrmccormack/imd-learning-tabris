@@ -16,7 +16,6 @@ let diceImage2 = new ImageView({
   image: IMAGE_PATH + '1.png'
 }).appendTo(ui.contentView);
 
-
 // button with event outside
 let resetbutton = new Button({
     centerX: 0,
@@ -30,8 +29,17 @@ let resetbutton = new Button({
 // event outsite create new
 diceImage1.on('tap', () => {
 console.log ('diceImage1');
+var rand = 1 + Math.floor(Math.random() * 6);
+diceImage1.image = IMAGE_PATH + rand + '.png';
+var rand = 1 + Math.floor(Math.random() * 6);
+diceImage2.image = IMAGE_PATH + rand + '.png';
+
   })
 
 diceImage2.on('tap', () => {
 console.log ('diceImage2');
+var rand = 1 + Math.floor(Math.random() * 6);
+diceImage1.image = IMAGE_PATH + rand + '.png';
+var rand = 1 + Math.floor(Math.random() * 6);
+diceImage2.image = IMAGE_PATH + rand + '.png';
   })
