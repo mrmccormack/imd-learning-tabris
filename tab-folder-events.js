@@ -1,13 +1,19 @@
-const {Tab, TabFolder, TextView, ui, AlertDialog} = require('tabris');
+const {Tab, TabFolder, TextView, ui, AlertDialog, Button} = require('tabris');
 
 const IMAGE_PATH = 'https://raw.githubusercontent.com/eclipsesource/tabris-js/master/snippets/resources/';
 
 // Create a swipe enabled tab folder with 3 tabs
 
+// Create a push button that counts up on selection
+
+
+
+
 let tabFolder = new TabFolder({
   left: 0, top: 0, right: 0, bottom: 0,
   paging: true // enables swiping. To still be able to open the developer console in iOS, swipe from the bottom right.
 }).appendTo(ui.contentView);
+
 
 createTab('Cart', IMAGE_PATH + 'cart.png', IMAGE_PATH + 'cart-filled.png');
 createTab('Pay', IMAGE_PATH + 'card.png', IMAGE_PATH + 'card-filled.png');
@@ -23,13 +29,12 @@ tabFolder.on('selectionChanged', ({value: tab}) =>
   }).open(); // end AlertDialog
 
 // do some other things
+
 console.log('hello world');
 console.log(tab.title);
 
  }
  );  // end selectionChaned event
-
-
 
 
 
@@ -44,3 +49,11 @@ function createTab(title, image, seletedImage) {
     text: 'Content of Tab ' + title
   }).appendTo(tab);
 }
+
+let count = 0;
+
+new Button({
+  left: 10, top: 10,
+  text: 'Button'
+}).on('select', ({target}) => target.text = 'Pressed ' + (++count) + ' times')
+  .appendTo(ui.contentView);
