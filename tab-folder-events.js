@@ -54,6 +54,7 @@ let count = 0;
 
 new Button({
   left: 10, top: 10,
-  text: 'Button'
+  text: 'Button',
+  image: IMAGE_PATH + 'cart.png'
 }).on('select', ({target}) => target.text = 'Pressed ' + (++count) + ' times')
   .appendTo(ui.contentView);
