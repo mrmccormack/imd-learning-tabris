@@ -53,6 +53,6 @@ cheatMode = true;  // toggle ???
   })
 
   diceImage2.on('longpress', () => {
-console.log ('Entering Cheat Mode - Good luck');
+console.log ('Leaving Cheat Mode - Good luck');
 cheatMode = false;  // toggle ???
   })
