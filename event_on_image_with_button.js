@@ -28,7 +28,10 @@ let resetbutton = new Button({
 .appendTo(ui.contentView);
 
 // event outsite create new
-resetbutton.on('select', () => {
-console.log ('you pressed reset');
-console.log (IMAGE_PATH);
+diceImage1.on('tap', () => {
+console.log ('diceImage1');
+  })
+
+diceImage2.on('tap', () => {
+console.log ('diceImage2');
   })
