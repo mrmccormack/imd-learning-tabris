@@ -1,4 +1,4 @@
-const {Tab, TabFolder, TextView, ui} = require('tabris');
+const {Tab, TabFolder, TextView, ui, AlertDialog} = require('tabris');
 
 const IMAGE_PATH = 'https://raw.githubusercontent.com/eclipsesource/tabris-js/master/snippets/resources/';
 
@@ -14,14 +14,24 @@ createTab('Pay', IMAGE_PATH + 'card.png', IMAGE_PATH + 'card-filled.png');
 createTab('Statistic', IMAGE_PATH +  'chart.png', IMAGE_PATH + 'chart-filled.png');
 createTab('Statistic', IMAGE_PATH +  'chart.png', IMAGE_PATH + 'chart-filled.png');
 
-
-
+// example of doing 3 tings in an event and outside of new declaration
 tabFolder.on('selectionChanged', ({value: tab}) =>
 {
+  new AlertDialog({
+    message: '© 2018 Mr. M. - Free to use',
+    buttons: {ok: 'OK'}
+  }).open(); // end AlertDialog
+
+// do some other things
 console.log('hello world');
-console.log(tab.title)
+console.log(tab.title);
+
  }
- );
+ );  // end selectionChaned event
+
+
+
+
 
 function createTab(title, image, seletedImage) {
   let tab = new Tab({
