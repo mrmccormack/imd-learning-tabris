@@ -15,7 +15,13 @@ createTab('Statistic', IMAGE_PATH +  'chart.png', IMAGE_PATH + 'chart-filled.png
 createTab('Statistic', IMAGE_PATH +  'chart.png', IMAGE_PATH + 'chart-filled.png');
 
 
-tabFolder.on('selectionChanged', ({value: tab}) => console.log(tab.title));
+
+tabFolder.on('selectionChanged', ({value: tab}) =>
+{
+console.log('hello world');
+console.log(tab.title)
+ }
+ );
 
 function createTab(title, image, seletedImage) {
   let tab = new Tab({
