@@ -41,10 +41,17 @@ diceImage2.image = IMAGE_PATH + rand + '.png';
 
 diceImage2.on('tap', () => {
 console.log ('diceImage2');
+if (cheatMode) {
+
+var rand = 1 + Math.floor(Math.random() * 6);
+diceImage1.image = IMAGE_PATH + rand + '.png';
+diceImage2.image = IMAGE_PATH + rand + '.png';
+} else {
 var rand = 1 + Math.floor(Math.random() * 6);
 diceImage1.image = IMAGE_PATH + rand + '.png';
 var rand = 1 + Math.floor(Math.random() * 6);
 diceImage2.image = IMAGE_PATH + rand + '.png';
+}
   })
 
 diceImage1.on('longpress', () => {
