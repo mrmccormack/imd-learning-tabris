@@ -21,7 +21,9 @@ let diceImage2 = new ImageView({
 let resetbutton = new Button({
     centerX: 0,
     top: 'prev() 10',
-    image: {src:IMAGE_PATH + '6.png', scaleMode:'fill'}
+    image: {src:IMAGE_PATH + '6.png', scaleMode:'fill'},
+ // no work   tintColor: '#ffffff',
+
   })
 .appendTo(ui.contentView);
 
