@@ -1,12 +1,9 @@
 const {Tab, TabFolder, TextView, ui, AlertDialog, Button} = require('tabris');
-
 const IMAGE_PATH = 'https://raw.githubusercontent.com/eclipsesource/tabris-js/master/snippets/resources/';
 
 // Create a swipe enabled tab folder with 3 tabs
 
 // Create a push button that counts up on selection
-
-
 
 
 let tabFolder = new TabFolder({
@@ -20,6 +17,7 @@ createTab('Pay', IMAGE_PATH + 'card.png', IMAGE_PATH + 'card-filled.png');
 createTab('Statistic', IMAGE_PATH +  'chart.png', IMAGE_PATH + 'chart-filled.png');
 createTab('Statistic', IMAGE_PATH +  'chart.png', IMAGE_PATH + 'chart-filled.png');
 
+
 // example of doing 3 tings in an event and outside of new declaration
 tabFolder.on('selectionChanged', ({value: tab}) =>
 {
@@ -29,13 +27,10 @@ tabFolder.on('selectionChanged', ({value: tab}) =>
   }).open(); // end AlertDialog
 
 // do some other things
-
 console.log('hello world');
 console.log(tab.title);
-
  }
  );  // end selectionChaned event
-
 
 
 function createTab(title, image, seletedImage) {
@@ -47,7 +42,15 @@ function createTab(title, image, seletedImage) {
   new TextView({
     centerX: 0, centerY: 0,
     text: 'Content of Tab ' + title
-  }).appendTo(tab);
+  })
+    new Button({
+    centerX: 0, centerY: 0,
+    text: 'TAP ME'
+  }).on('select', () => tabFolder.selection = tab)
+
+
+.appendTo(tab);
+
 }
 
 let count = 0;
