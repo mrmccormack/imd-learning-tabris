@@ -4,7 +4,7 @@ const {ui, ImageView, AlertDialog, Button} = require('tabris');
 const IMAGE_PATH = 'https://mrmccormack.github.io/imd-learning-tabris/images/';
 const DICE_OFFSET = 30;
 
-// long pressing will cause doubles to roll all the time
+// long pressing will enable/disable cheatMode (doubles to roll all the time)
 let cheatMode = false;
 
 let diceImage1 = new ImageView({
