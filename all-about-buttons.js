@@ -24,8 +24,8 @@ let togglebutton2 = new ToggleButton({
 let resetbutton = new Button({
     centerX: 0,
     top: 'prev() 10',
-    text: 'Reset',
-    image: {src:'https://github.com/mrmccormack/imd-learning-tabris/blob/master/images/card.png?raw=true', scale: 2}
+    text: '  Reset',
+    image: {src:'https://github.com/mrmccormack/imd-learning-tabris/blob/master/images/card.png?raw=true', scale: 4}
 
   })
 .appendTo(ui.contentView);
