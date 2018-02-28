@@ -63,3 +63,28 @@ diceImage2.on('longpress', () => {
 console.log ('Leaving Cheat Mode - Good luck');
 cheatMode = false;  // toggle ???
   })
+
+
+
+
+  let btnShowDice = new Button({
+    centerX: 0,
+    top: 'prev() 10',
+    text: 'Show / Hide  dice'
+  })
+  .on('select', () => {
+  diceImage1.visible = !diceImage1.visible;
+  diceImage2.visible = !diceImage2.visible;
+
+  }).appendTo(ui.contentView);
+
+
+  let btnOpacityDice = new Button({
+    centerX: 0,
+    top: 'prev() 10',
+    text: 'Change Opacity'
+  })
+  .on('select', () => {
+  diceImage1.opacity = 0.5;
+
+  }).appendTo(ui.contentView);
