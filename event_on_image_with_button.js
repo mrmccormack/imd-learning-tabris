@@ -19,15 +19,7 @@ let diceImage2 = new ImageView({
   image: IMAGE_PATH + '1.png'
 }).appendTo(ui.contentView);
 
-// button with event outside
-let resetbutton = new Button({
-    centerX: 0,
-    top: 'prev() 10',
-    image: {src:IMAGE_PATH + '6.png', scaleMode:'fill'},
- // no work   tintColor: '#ffffff',
 
-  })
-.appendTo(ui.contentView);
 
 // event outsite create new
 diceImage1.on('tap', () => {
@@ -38,14 +30,11 @@ if (cheatMode) {
 var rand = 1 + Math.floor(Math.random() * 6);
 diceImage1.image = IMAGE_PATH + rand + '.png';
 diceImage2.image = IMAGE_PATH + rand + '.png';
-
-
 } else {
 var rand = 1 + Math.floor(Math.random() * 6);
 diceImage1.image = IMAGE_PATH + rand + '.png';
 var rand = 1 + Math.floor(Math.random() * 6);
 diceImage2.image = IMAGE_PATH + rand + '.png';
-
 }
 
 })
@@ -60,6 +49,10 @@ diceImage2.image = IMAGE_PATH + rand + '.png';
 
 diceImage1.on('longpress', () => {
 console.log ('Entering Cheat Mode - Good luck');
-cheatMode = true;
+cheatMode = true;  // toggle ???
+  })
 
+  diceImage2.on('longpress', () => {
+console.log ('Entering Cheat Mode - Good luck');
+cheatMode = false;  // toggle ???
   })
