@@ -33,15 +33,14 @@ let txt1 = new TextView({
 
 let btnSwitch = new Button({
   left: 10, top: 10,
-  text: 'Button'
+  text: 'Switch tabWeb'
 }).appendTo(tabHome);
-
 
 // event outsite create new
 btnSwitch.on('select', () => {
+// no work tabFolder.Tab = 2;
 console.log ('you pressed btnSwitch');
-
-  })
+})
 
 
 
@@ -78,6 +77,7 @@ let urlInput = new TextInput({
 }).on('accept', loadUrl)
 .appendTo(tabWeb);
 
+
 let webView = new WebView({
   left: 0, top: 'prev() 8', right: 0, bottom: 0
 }).appendTo(tabWeb);
@@ -85,5 +85,4 @@ let webView = new WebView({
 function loadUrl() {
   webView.url = urlInput.text;
 }
-
 loadUrl();
