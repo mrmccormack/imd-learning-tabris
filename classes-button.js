@@ -1,6 +1,8 @@
 /*
 Example of using class and id
 Tested on : Tabris.js 2.4
+@version:2.4
+url: http://
 */
 
 const {Button, ui} = require('tabris');
