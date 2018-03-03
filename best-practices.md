@@ -4,10 +4,14 @@
 
 ```js
 /*
-Using class and id's
+  Using classes and id's
 
-@version:2.4
-url: http://
+  @version:2.4
+  Snippet url:
+  -  http://
+  References:
+  - https://tabrisjs.com/documentation/latest/selector.html
+
 */
 ```
 
