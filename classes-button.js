@@ -18,14 +18,24 @@ let btnCancel = new Button({
 }).appendTo(ui.contentView);
 
 let btnReset = new Button({
-  class: 'main',
+  id: 'reset',
   left: 10, top: 'prev() 10', width:100,
   text: 'Reset'
 }).appendTo(ui.contentView);
 
 // event outsite create new
 btnReset.on('select', () => {
-console.log ('you pressed reset');
+
+//  using classes
 ui.find('.main').set('textColor', 'red');
-ui.apply({'*': {background: 'green'}});
-})
+ui.apply({'*': {background: '#ccc'}}); // apply using wildcards
+
+// using id
+ui.find('#reset').set('textColor', 'white');
+ui.find('#reset').set('background', '#f00');
+ui.find('#reset').set('textColor', 'white');
+
+console.log ('you pressed reset');
+
+
+})  // end btnReset select
