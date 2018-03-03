@@ -23,12 +23,12 @@ let btnReset = new Button({
   text: 'Reset'
 }).appendTo(ui.contentView);
 
-// event outsite create new
+// event outsite create new declaration
 btnReset.on('select', () => {
 
 //  using classes
 ui.find('.main').set('textColor', 'red');
-ui.apply({'*': {background: '#ccc'}}); // apply using wildcards
+ui.apply({'*': {background: '#ccc', width: 130}}); // apply using wildcards and multiple properties
 
 // using id
 ui.find('#reset').set('textColor', 'white');
@@ -37,5 +37,4 @@ ui.find('#reset').set('textColor', 'white');
 
 console.log ('you pressed btnReset');
 
-
-})  // end btnReset select
+})  // end event btnReset on('select')
