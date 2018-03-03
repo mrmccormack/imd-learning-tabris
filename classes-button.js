@@ -1,8 +1,9 @@
+/*
+Example of using classes
+Tested on : Tabris.js 2.4
+*/
+
 const {Button, ui} = require('tabris');
-
-
-// Create a push button that counts up on selection
-
 
 let btnOK = new Button({
   class: 'main',
@@ -26,4 +27,5 @@ let btnReset = new Button({
 btnReset.on('select', () => {
 console.log ('you pressed reset');
 ui.find('.main').set('textColor', 'red');
-  })
+ui.apply({'*': {background: 'green'}});
+})
