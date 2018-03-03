@@ -5,6 +5,8 @@ Tested on : Tabris.js 2.4
 
 const {Button, ui} = require('tabris');
 
+ui.background = 'red'; // this only colors top ???
+
 let btnOK = new Button({
   class: 'main',
   centerX: 0,
