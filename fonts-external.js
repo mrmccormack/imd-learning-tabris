@@ -15,6 +15,6 @@ new TextView({
 
 new TextView({
   left: 16, top: 'prev() 8', right: 16,
-  text: 'Sphinx of black quartz, judge my vow. Sphinx of black quartz, judge my vow. Sphinx of black quartz...',
+  text: 'Sphinx of black quartz, judge my vow.  \n \n \ -Sphinx of black quartz, judge my vow.  \n \n \nSphinx of black quartz, judge my vow. Sphinx of black quartz... \n \n \nSphinx of black quartz, judge my vow. Sphinx of black quartz... \n \n \nSphinx of black quartz, judge my vow. Sphinx of black quartz...',
   font: font
 }).appendTo(scrollView);
