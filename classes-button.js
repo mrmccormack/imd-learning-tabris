@@ -1,5 +1,5 @@
 /*
-Example of using classes
+Example of using class and id
 Tested on : Tabris.js 2.4
 */
 
