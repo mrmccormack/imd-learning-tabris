@@ -8,11 +8,25 @@
   - https://eclipsesource.com/blogs/2017/12/22/tabris-js-2-3-released/
 
 */
-const {ui, contentView, ImageView} = require('tabris');
 
 
-let imageView = new ImageView({
-  left: 0, right: 0, top: 0, bottom: 0,
-  image: 'https://raw.githubusercontent.com/eclipsesource/tabris-js/v2.4.0/snippets/resources/salad.jpg',
-  zoomEnabled: true
+const { ui, ImageView} = require('tabris');
+// example of images side by side - Matt.
+
+const IMAGE_PATH = 'https://mrmccormack.github.io/imd-learning-tabris/images/';
+const DICE_OFFSET = 30;
+
+let diceImage1 = new ImageView({
+  centerY: 0, width:100, height: 100,
+  centerX: -DICE_OFFSET,
+  image: IMAGE_PATH + '6.png',
+  zoomEnabled: true,
+  scaleMode: 'fill'
+}).appendTo(ui.contentView);
+
+let diceImage2 = new ImageView({
+  centerY: 0,
+  centerX: DICE_OFFSET,
+  image: IMAGE_PATH + '1.png'
+
 }).appendTo(ui.contentView);
