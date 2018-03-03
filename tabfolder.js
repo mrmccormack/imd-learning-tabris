@@ -6,7 +6,6 @@
   -  http://
   References:
   - https://tabrisjs.com/documentation/latest/api/TabFolder.html
-
 */
 
 const {Button, Tab, TextInput, TabFolder, TextView, ImageView, ui, WebView} = require('tabris');
@@ -16,7 +15,7 @@ let tabFolder = new TabFolder({
   paging: true // enables swiping. To still be able to open the developer console in iOS, swipe from the bottom right.
 }).appendTo(ui.contentView);
 
-let tab = new Tab({
+let tabHome = new Tab({
     title: 'Tab 1', // converted to upper-case on Android
     //image: {src: image, scale: 2},
     //selectedImage: {src: 'http://weknowyourdreams.com/images/dice/dice-14.jpg', scale: 2}
@@ -28,17 +27,34 @@ let tab = new Tab({
 let txt1 = new TextView({
     centerX: 0, centerY: 0,
     text: 'Content of Tab 1 '
-  }).appendTo(tab);
+  }).appendTo(tabHome);
+
+  let count = 0;
+
+let btnSwitch = new Button({
+  left: 10, top: 10,
+  text: 'Button'
+}).appendTo(tabHome);
+
+
+// event outsite create new
+btnSwitch.on('select', () => {
+console.log ('you pressed btnSwitch');
+
+  })
+
+
+
 
   new ImageView({
     centerX:0, top: 'prev() 10', width: 100, height: 100,
     image: 'http://weknowyourdreams.com/images/dice/dice-14.jpg',
     background: '#aaaaaa',
     scaleMode: 'fit'
-  }).appendTo(tab);
+  }).appendTo(tabHome);
 
 
-let tab1 = new Tab({
+let tabWeb = new Tab({
     title: 'Tab 2', // converted to upper-case on Android
     //image: {src: image, scale: 2},
     selectedImage: {src: 'http://weknowyourdreams.com/images/dice/dice-14.jpg', scale: 2}
@@ -50,7 +66,7 @@ let tab1 = new Tab({
   let txt2 = new TextView({
     centerX: 0, top:0,
     text: 'Content of Tab 2 '
-  }).appendTo(tab1);
+  }).appendTo(tabWeb);
 
 
   // Create a web view to show a web page
@@ -60,11 +76,11 @@ let urlInput = new TextInput({
   message: 'Enter URL...',
   text: 'http://en.wikipedia.org'
 }).on('accept', loadUrl)
-.appendTo(tab1);
+.appendTo(tabWeb);
 
 let webView = new WebView({
   left: 0, top: 'prev() 8', right: 0, bottom: 0
- }).appendTo(tab1);
+}).appendTo(tabWeb);
 
 function loadUrl() {
   webView.url = urlInput.text;
