@@ -9,7 +9,7 @@
 
 */
 
-const {ImageView, Button,app, ui} = require('tabris');
+const {ImageView, Button,app, ui, TextView} = require('tabris');
 
 const GITHUB_URL = 'https://github.com/mrmccormack/imd-learning-tabris/blob/master/button-view-on-github.js';
 
@@ -25,4 +25,10 @@ let imgGithubLink = new ImageView({
 }).on({
   tap: () => app.launch(GITHUB_URL)
     .catch((e) => textView.text = e)
+}).appendTo(ui.contentView);
+
+new TextView({
+  left: 10, top: 20, right: 10,
+  text: 'Description \n goes here...',
+  alignment: 'center'
 }).appendTo(ui.contentView);
