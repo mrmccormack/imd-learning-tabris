@@ -11,20 +11,17 @@
 
 const {ImageView, Button,app, ui} = require('tabris');
 
-
 const GITHUB_URL = 'https://github.com/mrmccormack/imd-learning-tabris/blob/master/button-view-on-github.js';
 
 let imgTabrisIcon = new ImageView({
-    centerX: 0, top: 'prev() 10',
-    image: 'https://raw.githubusercontent.com/mrmccormack/imd-learning-tabris/master/images/tabris-icon.png',
-    scaleMode: 'none'
+    left: 10, top: 20, width:48, height:50,
+    image: 'https://raw.githubusercontent.com/mrmccormack/imd-learning-tabris/master/images/tabris-icon.png'
+
 }).appendTo(ui.contentView);
 
-
 let imgGithubLink = new ImageView({
-    centerX: 0, bottom: 20,
-    image: 'https://cdn3.iconfinder.com/data/icons/free-social-icons/67/github_circle_black-48.png',
-    scaleMode: 'none'
+    right: 10, top: 20,
+    image: 'https://cdn3.iconfinder.com/data/icons/free-social-icons/67/github_circle_black-48.png'
 }).on({
   tap: () => app.launch(GITHUB_URL)
     .catch((e) => textView.text = e)
