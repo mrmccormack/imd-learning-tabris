@@ -15,11 +15,11 @@
 
 ---
 
-`Github file:`
+### Github source:
 
 - https://github.com/mrmccormack/imd-learning-tabris/blob/master/all-about-buttons.js
 
-`References:`
+### References:
 
 1. https://tabrisjs.com/documentation/latest/api/Button.html
 1. https://tabrisjs.com/documentation/latest/api/ImageView.html
@@ -27,5 +27,7 @@
 
 ---
 
-`screenshot`
+### Screenshot
+> click to view
+
 ![](https://raw.githubusercontent.com/mrmccormack/imd-learning-tabris/master/button-view-on-github.png)
