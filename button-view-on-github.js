@@ -3,7 +3,7 @@
 
   @version:2.4
   Snippet url:
-  -  http://
+  -  https://github.com/mrmccormack/imd-learning-tabris/blob/master/button-view-on-github.md
   References:
   - https://tabrisjs.com/documentation/latest/selector.html
 
@@ -11,13 +11,16 @@
 
 const {ImageView, Button,app, ui, TextView, ProgressBar} = require('tabris');
 
-const GITHUB_URL = 'https://github.com/mrmccormack/imd-learning-tabris/blob/master/button-view-on-github.js';
+const GITHUB_URL = 'https://github.com/mrmccormack/imd-learning-tabris/blob/master/button-view-on-github.md';
+const TABRIS_URL = 'https://tabrisjs.com/documentation/latest/';
 
 let imgTabrisIcon = new ImageView({
     left: 10, top: 20, width:48, height:50,
     image: 'https://raw.githubusercontent.com/mrmccormack/imd-learning-tabris/master/images/tabris-icon.png'
-
-}).appendTo(ui.contentView);
+  }).on({
+    tap: () => app.launch(TABRIS_URL)
+      .catch((e) => textView.text = e)
+  }).appendTo(ui.contentView);
 
 let imgGithubLink = new ImageView({
     right: 10, top: 20,
@@ -26,6 +29,7 @@ let imgGithubLink = new ImageView({
   tap: () => app.launch(GITHUB_URL)
     .catch((e) => textView.text = e)
 }).appendTo(ui.contentView);
+
 
 let txtvDescription = new TextView({
   left: 10, top: 20, right: 10,
