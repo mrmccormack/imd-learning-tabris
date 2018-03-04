@@ -9,7 +9,7 @@
 
 */
 
-const {ImageView, Button,app, ui, TextView} = require('tabris');
+const {ImageView, Button,app, ui, TextView, ProgressBar} = require('tabris');
 
 const GITHUB_URL = 'https://github.com/mrmccormack/imd-learning-tabris/blob/master/button-view-on-github.js';
 
@@ -32,4 +32,10 @@ let txtvDescription = new TextView({
   text: 'Description \n goes here...',
   alignment: 'center',
   font: '12px'
+}).appendTo(ui.contentView);
+
+let prgbLine = new ProgressBar({
+  left: 15, right: 15, top: 'prev() +26',
+  maximum: 100,
+  selection: 100
 }).appendTo(ui.contentView);
