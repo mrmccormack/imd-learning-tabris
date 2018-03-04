@@ -2,8 +2,19 @@
 
 # Learning Tabris
 
+`@version:2.4`
 
-`code`
+Works on https://tabrisjs.com/playground 1**YES**
+
+
+### Highlights
+- This code demonatrates the following things:
+1. asdf
+2. asdf
+
+---
+
+`Github file:`
 
 - https://github.com/mrmccormack/imd-learning-tabris/blob/master/all-about-buttons.js
 
