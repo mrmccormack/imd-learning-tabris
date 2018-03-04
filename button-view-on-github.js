@@ -27,8 +27,9 @@ let imgGithubLink = new ImageView({
     .catch((e) => textView.text = e)
 }).appendTo(ui.contentView);
 
-new TextView({
+let txtvDescription = new TextView({
   left: 10, top: 20, right: 10,
   text: 'Description \n goes here...',
-  alignment: 'center'
+  alignment: 'center',
+  font: '12px'
 }).appendTo(ui.contentView);
