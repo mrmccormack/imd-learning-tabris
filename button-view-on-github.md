@@ -4,7 +4,7 @@
 
 `@version:2.4`
 
-Works on https://tabrisjs.com/playground `**YES**`
+Works on https://tabrisjs.com/playground `YES`
 
 
 ### Highlights
