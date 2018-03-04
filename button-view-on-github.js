@@ -22,7 +22,7 @@ let imgTabrisIcon = new ImageView({
 
 
 let imgGithubLink = new ImageView({
-    centerX: 0, bottom: 0,
+    centerX: 0, bottom: 20,
     image: 'https://cdn3.iconfinder.com/data/icons/free-social-icons/67/github_circle_black-48.png',
     scaleMode: 'none'
 }).on({
