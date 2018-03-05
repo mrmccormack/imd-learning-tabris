@@ -41,12 +41,16 @@ let txtvDescription = new TextView({
 let progressBar = new ProgressBar({
   left: 15, right: 15, top: 'prev() +26',
   maximum: 300,
-  selection: 100
+  selection: 1
 }).appendTo(ui.contentView);
 
-// animate progressBar
-setInterval(() => {
-  let selection = progressBar.selection + 1;
-  progressBar.selection = selection > 300 ? 0 : selection;
 
-}, 10);
+
+// animate progressBar
+let lineAnimate = setInterval(() => {
+let selection = progressBar.selection + 1;
+progressBar.selection = selection > 300 ? 0 : selection;
+
+}, 1);
+
+// clearInterval(lineAnimate);
