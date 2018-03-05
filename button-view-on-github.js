@@ -53,9 +53,23 @@ for (i = 0; i < 40; i++) {
   progress = i * 10;
  setTimeout(setProgress, 20);
 //  console.log (text);
+
+
+
 }
+
+
+txtDescription.animate({
+    opacity: 0.5,
+    transform: {
+      scaleX: 1.3,
+      scaleY: 1.3,
+    }
+})
 
 function setProgress() {
   // txtDescription.text = 'Thank you!' + progress.toString();
   progressBar.selection = progress;
+
+
 }
