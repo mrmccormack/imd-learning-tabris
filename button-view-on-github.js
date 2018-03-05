@@ -61,8 +61,6 @@ for (i = 0; i < 40; i++) {
 
 txtDescription.animate({
   opacity: 0.5,
-  duration: 3000,
-  easing: "ease-out",
     transform: {
       scaleX: 1.3,
       scaleY: 1.3,
