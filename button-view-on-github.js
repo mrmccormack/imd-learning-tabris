@@ -31,26 +31,31 @@ let imgGithubLink = new ImageView({
 }).appendTo(ui.contentView);
 
 
-let txtvDescription = new TextView({
+let txtDescription = new TextView({
   left: 10, top: 20, right: 10,
   text: 'Description \n goes here...',
   alignment: 'center',
   font: '12px'
 }).appendTo(ui.contentView);
 
+
+
 let progressBar = new ProgressBar({
-  left: 15, right: 15, top: 'prev() +26',
+  left: 15, right: 15, top: 80,
   maximum: 300,
   selection: 1
 }).appendTo(ui.contentView);
 
+let progress = 10 ;
 
+for (i = 0; i < 40; i++) {
+    //text += "The number is " + i + "<br>";
+  progress = i * 10;
+ setTimeout(setProgress, 20);
+//  console.log (text);
+}
 
-// animate progressBar
-let lineAnimate = setInterval(() => {
-let selection = progressBar.selection + 1;
-progressBar.selection = selection > 300 ? 0 : selection;
-
-}, 1);
-
-// clearInterval(lineAnimate);
+function setProgress() {
+  // txtDescription.text = 'Thank you!' + progress.toString();
+  progressBar.selection = progress;
+}
