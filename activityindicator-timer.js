@@ -1,11 +1,16 @@
+// reference https://tabrisjs.com/documentation/latest/api/ActivityIndicator.html
+
 const {ActivityIndicator, Button, ui} = require('tabris');
 
 // Create the activity indicator centered in the page
 let activityIndicator = new ActivityIndicator({
   centerX: 0,
-  centerY: 0
+  centerY: 0,
+
 }).appendTo(ui.contentView);
 
+
+    activityIndicator.visible = false;
 // Create reload button
 let reloadButton = new Button({
   centerX: 0, centerY: 0,
@@ -25,4 +30,5 @@ function executeLongRunningTask() {
   }, 2500);
 }
 
-executeLongRunningTask();
+// leave this to run on startup
+// executeLongRunningTask();
