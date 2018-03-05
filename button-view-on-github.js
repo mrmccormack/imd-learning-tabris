@@ -38,8 +38,15 @@ let txtvDescription = new TextView({
   font: '12px'
 }).appendTo(ui.contentView);
 
-let prgbLine = new ProgressBar({
+let progressBar = new ProgressBar({
   left: 15, right: 15, top: 'prev() +26',
-  maximum: 100,
+  maximum: 300,
   selection: 100
 }).appendTo(ui.contentView);
+
+// animate progressBar
+setInterval(() => {
+  let selection = progressBar.selection + 1;
+  progressBar.selection = selection > 300 ? 0 : selection;
+
+}, 10);
