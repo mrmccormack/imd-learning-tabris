@@ -55,7 +55,7 @@ diceImage2.animate({
 
 }, {
   duration: 200,
-  easing: 'ease-out',
+  //easing: 'ease-out',
           repeat: 1,
     reverse: true,
 }).then(() => label.dispose());
@@ -70,9 +70,9 @@ diceImage2.animate({
   }
 }, {
   duration: 300,
-  easing: 'ease-out',
+  //easing: 'ease-out',
           repeat: 1,
-    reverse: true,
+     reverse: true,
 }).then(() => label.dispose());
 
 
