@@ -28,6 +28,7 @@ let diceImage2 = new ImageView({
   .on('select', () => {
 //console.log ('you pressed btnAnimate');
 
+    // this works btnAnimate.visible = false;
 let rand = 1 + Math.floor(Math.random() * 6);
 diceImage1.image = IMAGE_PATH + rand + '.jpg';
 
