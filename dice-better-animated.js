@@ -31,22 +31,30 @@ diceImage1.image = IMAGE_PATH + rand + '.jpg';
 
 let rand1 = 1 + Math.floor(Math.random() * 6);
 diceImage2.image = IMAGE_PATH + rand1 + '.jpg';
+let messDoubles = "";
+if (rand==rand1){
+  messDoubles = "You rolled doubles: "
+}
+    else{
+      messDoubles = "You rolled: "
+    }
+
 
 totalDice = rand1 + rand;
-btnAnimate.text = 'You rolled: ' + totalDice;
+btnAnimate.text = messDoubles + totalDice;
 
 diceImage2.animate({
   //opacity: 0,
 
   transform: {
 
-    rotation: 2 * Math.PI,
+    rotation: 6 * Math.PI,
     //scaleX: 2
   }
 
 
 }, {
-  duration: 300,
+  duration: 200,
   easing: 'ease-out',
           repeat: 1,
     reverse: true,
@@ -57,11 +65,11 @@ diceImage2.animate({
   //opacity: 0,
 
   transform: {
-    rotation: 4 * Math.PI,
+    rotation: -4 * Math.PI,
     //scaleX: 2
   }
 }, {
-  duration: 500,
+  duration: 300,
   easing: 'ease-out',
           repeat: 1,
     reverse: true,
