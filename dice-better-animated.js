@@ -49,6 +49,8 @@ diceImage2.animate({
   transform: {
 
     rotation: 6 * Math.PI,
+        scaleX: 2,
+    scaleY: 2
     //scaleX: 2
   }
 
@@ -66,7 +68,8 @@ diceImage2.animate({
 
   transform: {
     rotation: -4 * Math.PI,
-    //scaleX: 2
+    scaleX: 2,
+    scaleY: 2
   }
 }, {
   duration: 300,
