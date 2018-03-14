@@ -3,6 +3,7 @@ const IMAGE_PATH = 'https://mrmccormack.github.io/imd-learning-tabris/images/';
 const DICE_OFFSET = 30;
 
 diceImage1 = new ImageView({
+  top: 150,
 
   left: 150, width: 50, height: 50,
 
@@ -10,6 +11,7 @@ diceImage1 = new ImageView({
 }).appendTo(ui.contentView);
 
 let diceImage2 = new ImageView({
+    top: 150,
     left: 50,  width: 50, height: 50,
   image: IMAGE_PATH + '6.jpg'
 
