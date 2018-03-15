@@ -2,6 +2,9 @@ const { Button, ui, ImageView} = require('tabris');
 const IMAGE_PATH = 'https://mrmccormack.github.io/imd-learning-tabris/images/';
 const DICE_OFFSET = 30;
 
+// https://www.freepik.com/free-vector/illustration-of-a-set-of-red-dices_1164307.htm#term=dice&page=1&position=2
+// free for commercial usewith attribution
+
 diceImage1 = new ImageView({
   top: 150,
 
