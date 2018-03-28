@@ -1,14 +1,21 @@
 const {fs, Button, TextView, TextInput, ui} = require('tabris');
 
 
-/*
-This works locally - but file must exist or it can't be read
+let txiFileName =  new TextInput({
+  top: 'prev() 20', left: '20%', right: '20%',
+  text: 'hello10.txt'
+}).on('accept', ({text}) => {
+  new TextView({
+    top: 'prev() 20', left: '20%',
+    text: text,
+    markupEnabled: true,
+
+  }).appendTo(ui.contentView);
+
+}).appendTo(ui.contentView);
 
 
-*/
-
-
-    let file = fs.filesDir + '/hello1.txt';
+let file = fs.filesDir + '/' + txiFileName.text;
     //  ok, this works.. > file written: /local/hello.txt
     // and is located in:
     // C:\Users\Rob Acer Aspire 3\AppData\Local\Packages\EclipseSource.Tabris.js2_en185yn5qwkmw\LocalState\hello.txt
@@ -19,7 +26,7 @@ console.log(file);
 let btnReadFile = new Button({
     centerX: 0,
     top: 'prev() 10',
-    text: 'Read File' + file,
+    text: 'Read File',
     image: {src:'https://github.com/mrmccormack/imd-learning-tabris/blob/master/images/card.png?raw=true', scale: 1}
 
   })
@@ -27,10 +34,11 @@ let btnReadFile = new Button({
 
 // event outsite create new
 btnReadFile.on('select', () => {
+
 console.log ('you pressed btnReadFile');
 fs.readFile(file, 'utf-8')
-  .then(text => myText.text = text)
-  .then(text => myLabel.text = text)
+  .then(text => txiFile.text = text)
+  .then(text => txvFile.text = text)
   // .then(text => console.log('read text from %s:', file, text))
 
   .catch(err => console.error(err));
@@ -48,7 +56,7 @@ fs.readFile(file, 'utf-8')
   let btnWriteFile = new Button({
       centerX: 0,
       top: 'prev() 10',
-      text: 'Write File' + file,
+      text: 'Write File',
       image: {src:'https://github.com/mrmccormack/imd-learning-tabris/blob/master/images/card.png?raw=true', scale: 1}
 
     })
@@ -57,11 +65,11 @@ fs.readFile(file, 'utf-8')
   // event outsite create new
   btnWriteFile.on('select', () => {
   console.log ('you pressed btnWriteFile');
-  let ss = myText.text;
+  let ss = txiFile.text;
   console.log (ss);
-
-  fs.writeFile(file, myText.text, 'utf-8')
-  // fs.writeFile(file, str2ab(myText.Text), 'utf-8')
+file = fs.filesDir + '/' + txiFileName.text;
+  fs.writeFile(file, txiFile.text, 'utf-8')
+  // fs.writeFile(file, str2ab(txiFile.Text), 'utf-8')
   .then(() => console.log('file written:', file))
   .catch(err => console.error(err));
     })
@@ -72,7 +80,7 @@ fs.readFile(file, 'utf-8')
 
 // Create a text input field with input finished listener
 
-let myText =  new TextInput({
+let txiFile =  new TextInput({
   top: 'prev() 20', left: '20%', right: '20%', height: 100,
           type: 'multiline',
   message: 'Type here, then confirm'
@@ -86,7 +94,9 @@ let myText =  new TextInput({
 }).appendTo(ui.contentView);
 
 
-let myLabel = new TextView({
+
+
+let txvFile = new TextView({
   left: '30%', top: 'prev() 20', right: '30%',
   text: 'Left',
   alignment: 'left',
