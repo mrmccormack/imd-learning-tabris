@@ -1,14 +1,22 @@
-const {TextInput, WebView, ui} = require('tabris');
+const {TextView, WebView, ImageView, ui} = require('tabris');
 
 // Create a web view to show a web page
-const YOU_TUBE_VID ='<iframe width="560" height="315" src="https://www.youtube.com/embed/Qe_TTI64fJA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>;'
 
-const YOUTUBEURL = 'BzMLA8YIgG0';
-const MAINHEADING = 'Microsoft Surface Studio';
-const MAINDESCRIPTION = 'Microsoft Surface Studio is a new category of device, designed to put you at the center of the creative process.';
-const FOOTER = 'Surface Studio is designed for the creative process. The 28” PixelSense™ Display gives you a huge canvas for all kinds of work. Use it upright, or draw on it like a drafting tabl';
+const INTRO_TEXT = 'This text from Tabris, WebView below.';
 
-const HTMLTEMPLATE = '<!DOCTYPE html>\
+const LOGO = 'https://eclipsesource.com/wp-content/uploads/2015/10/tabris-icon-logo-small.png';
+
+const YOUTUBE_URL = 'BzMLA8YIgG0';
+
+const RELATED_IMAGE = 'https://edge.alluremedia.com.au/m/g/2017/05/SAM_0023-01-1.jpeg';
+
+const MAIN_HEADING = 'Surface Studio';
+
+const MAIN_DESCRIPTION = 'Microsoft Surface Studio is a new category of device, designed to put you at the center of the creative process.';
+
+const FOOTER = 'Surface Studio is designed for the creative process. The 28” PixelSense™ Display gives you a huge canvas for all kinds of work. Use it upright, or draw on it like a drafting table.';
+
+const HTML_TEMPLATE = '<!DOCTYPE html>\
 <html lang="en">\
 <head>\
   <meta charset="utf-8">\
@@ -20,35 +28,45 @@ const HTMLTEMPLATE = '<!DOCTYPE html>\
 </head>\
 <body>\
   <div class="bg-gray text-center p-2">\
-    <h2>' + MAINHEADING + '</h2>\
-    <p>' + MAINDESCRIPTION + '</p>\
+    <h3>' + MAIN_HEADING + '</h3>\
+    <p>' + MAIN_DESCRIPTION + '</p>\
   </div>\
   <div class="container">\
     <div class="columns">\
       <div class="column col-12">\
         <div class="video-responsive">\
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/' + YOUTUBEURL + '" allowfullscreen></iframe>\
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/' + YOUTUBE_URL + '" allowfullscreen></iframe>\
         </div>\
         <small>' + FOOTER + '</small>\
+        <div><img class="img-responsive" src = ' + RELATED_IMAGE + ' alt=""</div>\
       </div>\
     </div>\
   </div>\
 </body>\
 </html>';
 
-let urlInput = new TextInput({
-  left: 8, right: 8, top: 8,
-  message: 'Enter URL...',
-  text: 'http://en.wikipedia.org'
-}).on('accept', loadUrl)
-  .appendTo(ui.contentView);
+
+
+new ImageView({
+    centerX:0,  top: 15, width: 32,
+    image: LOGO,
+    scaleMode: 'fit'
+  }).appendTo(ui.contentView);
+
+new TextView({
+  left: 10, top: 'prev() 8', right: 10,
+  text: INTRO_TEXT,
+  alignment: 'left'
+}).appendTo(ui.contentView);
+
+
 
 let webView = new WebView({
   left: 0, top: 'prev() 8', right: 0, bottom: 0
 }).appendTo(ui.contentView);
 
 function loadUrl() {
-  webView.html = HTMLTEMPLATE;
+  webView.html = HTML_TEMPLATE;
 }
 
 loadUrl();
