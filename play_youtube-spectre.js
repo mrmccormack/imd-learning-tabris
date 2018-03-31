@@ -1,6 +1,6 @@
 const {TextView, WebView, ImageView, ui} = require('tabris');
 
-// Create a web view to show a web page
+// Using WebView to play responsive YouTube video and responsive images. Utilizes https://picturepan2.github.io/spectre/
 
 const INTRO_TEXT = 'This text from Tabris, WebView below.';
 
@@ -58,8 +58,6 @@ new TextView({
   text: INTRO_TEXT,
   alignment: 'left'
 }).appendTo(ui.contentView);
-
-
 
 let webView = new WebView({
   left: 0, top: 'prev() 8', right: 0, bottom: 0
