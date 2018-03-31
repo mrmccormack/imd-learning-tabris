@@ -53,5 +53,6 @@ function playAudio(url) {
       console.log('playAudio(): ' + url + 'Audio Error: ' + err);
     }
   );
+
   my_media.play();
 }
