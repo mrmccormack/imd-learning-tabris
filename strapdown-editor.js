@@ -1,4 +1,4 @@
-const {Button, TextInput, WebView, ui} = require('tabris');
+const {Button, TextView, TextInput, WebView, ui} = require('tabris');
 
 const INITIAL_TEXT = '![](https://cdn2.iconfinder.com/data/icons/nodejs-1/64/nodejs-64.png)\n# Heading \n- one \n- two \n---\n \
 Instant and elegant Markdown documents\n```js\n \
@@ -7,8 +7,13 @@ alert("Hello")\; \n```' ;
 const MESSAGE = 'Enter Markdown...';
 const TITLE = 'Strapdown.js';
 
+new TextView({
+  left: 8, right: 8, top: 16,
+  text: 'Enter some Markdown:',
+}).appendTo(ui.contentView);
+
 let txiMarkDown = new TextInput({
-  left: 8, right: 8, top: 8,
+  left: 8, right: 8, top: 'prev() 10',
   message: MESSAGE,
   type: 'multiline', height: 100,
   text: INITIAL_TEXT
