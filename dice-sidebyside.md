@@ -1,6 +1,6 @@
 # dice-sidebyside.js
 
-- Example of...
+- Example of... ...
 
 ## Link to  file
 - https://github.com/mrmccormack/imd-learning-tabris/blob/master/dice-sidebyside.js
