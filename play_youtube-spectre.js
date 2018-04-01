@@ -2,7 +2,7 @@ const {TextView, WebView, ImageView, ui} = require('tabris');
 
 // Using WebView to play responsive YouTube video and responsive images. Utilizes https://picturepan2.github.io/spectre/
 
-const INTRO_TEXT = 'This text from Tabris, WebView below.';
+const INTRO_TEXT = 'This text from Tabris, WebView below using Spectre.css for responsive images and video.';
 
 const LOGO = 'https://eclipsesource.com/wp-content/uploads/2015/10/tabris-icon-logo-small.png';
 
