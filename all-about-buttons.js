@@ -1,31 +1,17 @@
-const {ToggleButton,Button, ui} = require('tabris');
+const {Button, TextInput, WebView, ui} = require('tabris');
 
-const IMAGE_PATH = 'https://mrmccormack.github.io/imd-learning-tabris/images/';
-
-// Create a toggle button with a checked handler
-
-let togglebutton1 = new ToggleButton({
-  left: 10, top: 10,
-  text: 'checked',
-  checked: true
-}).on('checkedChanged', event => event.target.text = event.value ? 'checked' : 'not checked')
-  .appendTo(ui.contentView);
-
-
-let togglebutton2 = new ToggleButton({
-  left: 10, top: 'prev() 10',
-  text: 'checked',
-  checked: true
-}).on('checkedChanged', event => event.target.text = event.value ? 'checked' : 'not checked')
-  .appendTo(ui.contentView);
-
+let urlInput = new TextInput({
+  left: 8, right: 8, top: 8,
+  message: 'Enter URL...',
+  type: 'multiline', height: 100,
+  text: 'http://en.wikipedia.org'
+}).appendTo(ui.contentView);
 
 // button with event outside
 let resetbutton = new Button({
     centerX: 0,
     top: 'prev() 10',
-    text: '  Reset',
-    image: {src:'https://github.com/mrmccormack/imd-learning-tabris/blob/master/images/card.png?raw=true', scale: 4}
+    text: '  Reset'
 
   })
 .appendTo(ui.contentView);
@@ -33,22 +19,36 @@ let resetbutton = new Button({
 // event outsite create new
 resetbutton.on('select', () => {
 console.log ('you pressed reset');
-console.log (IMAGE_PATH);
+console.log (urlInput.text);
+  let HTML_TEMPLATE =  '<!DOCTYPE html>\
+<html>\
+<title>Hello Strapdown</title>\
+<xmp theme="united" style="display:none;">\
+' + urlInput.text + '</xmp>\
+<script src="http://strapdownjs.com/v/0.2/strapdown.js"></script>\
+</html>'
+
+ webView.html = HTML_TEMPLATE;
   })
 
 
-// button with event inside
-  let resetbutton1 = new Button({
-    centerX: 0,
-    top: 'prev() 10',
-    text: 'Reset1',
-    // for some reason, constant and image no work???
-    image: 'https://github.com/mrmccormack/imd-learning-tabris/blob/master/images/card.png?raw=true',
-
-  })
-  .on('select', () => {
-console.log ('you pressed reset1');
-console.log (IMAGE_PATH);
+let HTML_TEMPLATE =  '<!DOCTYPE html>\
+<html>\
+<title>Hello Strapdown</title>\
+<xmp theme="united" style="display:none;">\
+' + urlInput.text + '</xmp>\
+<script src="http://strapdownjs.com/v/0.2/strapdown.js"></script>\
+</html>'
+// Create a web view to show a web page
 
 
-  }).appendTo(ui.contentView);
+
+let webView = new WebView({
+  left: 0, top: 'prev() 8', right: 0, bottom: 0
+}).appendTo(ui.contentView);
+
+function loadUrl() {
+  webView.html = HTML_TEMPLATE;
+}
+
+loadUrl();
