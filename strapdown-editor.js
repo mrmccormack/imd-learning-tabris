@@ -20,8 +20,7 @@ let txiMarkDown = new TextInput({
 }).appendTo(ui.contentView);
 
 let btnRenderMarkDown = new Button({
-    centerX: 0,
-    top: 'prev() 10',
+    centerX: 0, top: 'prev() 10',
     text: 'Render Markdown'
   })
 .appendTo(ui.contentView);
