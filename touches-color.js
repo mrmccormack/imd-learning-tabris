@@ -10,16 +10,26 @@ ui.contentView.on({
     printXY('touchStart', touches);
     ui.contentView.background = 'yellow';
   },
-  touchMove: ({touches}) => printXY('touchMove', touches),
+
+  touchMove: ({touches}) => {printXY('touchMove', touches)
+      var blue = Math.round(touches[0].x) - 100
+    console.log(blue);
+    ui.contentView.background = "rgb(255, 0, " + blue + ")";
+                            },
+
   touchEnd: ({touches}) => {
     printXY('touchEnd', touches);
-    var blue = Math.round(touches[0].x)
-    ui.contentView.background = "rgb(255, 0, blue)";
+    var blue = Math.round(touches[0].x) - 100
+    console.log(blue);
+    ui.contentView.background = "rgb(255, 0, " + blue + ")";
   },
+
+
   touchCancel: ({touches}) => {
     printXY('touchCancel', touches);
     ui.contentView.background = 'red';
   },
+
   longpress: ({touches}) => {
     ui.contentView.background = 'blue';
     printXY('longpress', touches);
@@ -28,5 +38,6 @@ ui.contentView.on({
 
 function printXY(prefix, touches) {
   textView.text = prefix + ': ' + Math.round(touches[0].x) + ' X ' + Math.round(touches[0].y);
-  console.log(Math.round(touches[0].x))
+  //console.log(Math.round(touches[0].x))
 }
+      
