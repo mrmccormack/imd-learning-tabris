@@ -1,6 +1,6 @@
 # dice-sidebyside.js
 
-- Example of... ...sdf
+- Example of...
 
 
 
