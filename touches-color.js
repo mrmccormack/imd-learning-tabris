@@ -13,7 +13,8 @@ ui.contentView.on({
   touchMove: ({touches}) => printXY('touchMove', touches),
   touchEnd: ({touches}) => {
     printXY('touchEnd', touches);
-    ui.contentView.background = 'green';
+    var blue = Math.round(touches[0].x)
+    ui.contentView.background = "rgb(255, 0, blue)";
   },
   touchCancel: ({touches}) => {
     printXY('touchCancel', touches);
@@ -27,4 +28,5 @@ ui.contentView.on({
 
 function printXY(prefix, touches) {
   textView.text = prefix + ': ' + Math.round(touches[0].x) + ' X ' + Math.round(touches[0].y);
+  console.log(Math.round(touches[0].x))
 }
