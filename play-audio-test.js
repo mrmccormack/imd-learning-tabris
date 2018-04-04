@@ -16,17 +16,8 @@ btnPlay.on('select', function () {
 })
 
 function playAudio (url) {
-  var audioFile = new Media(
-    url,
-    // success callback
-    function () {
-      console.log('playAudio():Audio Success')
-    },
-    // error callback
-    function (err) {
-      console.log('playAudio():Audio Error: ' + err)
-    }
-  )
-
+  let onSuccess = () => console.log('Audio file loaded successfully')
+  let onError = err => console.log('Unable to play audio file: ' + err.code + ' - ' + err.message)
+  let audioFile = new Media(url, onSuccess, onError)
   audioFile.play()
 }
