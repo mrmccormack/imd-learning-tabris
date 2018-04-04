@@ -1,8 +1,8 @@
 // simple example to play audio file
 
 const { Button, ui } = require('tabris')
-
 const SOUND_1 = 'http://static1.grsites.com/archive/sounds/cartoon/cartoon001.mp3'
+// const SOUND_1 = 'https://raw.githubusercontent.com/eclipsesource/tabris-js/master/examples/cordova/audio/media.wav'
 
 let btnPlay = new Button({
   centerX: 0,
