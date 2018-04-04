@@ -16,7 +16,6 @@ btnPlay.on('select', function () {
 })
 
 function playAudio (url) {
-  // Play the audio file at url
   var audioFile = new Media(
     url,
     // success callback
@@ -28,6 +27,6 @@ function playAudio (url) {
       console.log('playAudio():Audio Error: ' + err)
     }
   )
-  // Play audio
+
   audioFile.play()
 }
