@@ -1,6 +1,7 @@
 // simple example to play audio file
 
 const { Button, ui } = require('tabris')
+const SOUND_1 = 'http://static1.grsites.com/archive/sounds/cartoon/cartoon001.mp3'
 
 let btnPlay = new Button({
   centerX: 0,
@@ -12,7 +13,7 @@ let btnPlay = new Button({
 }).appendTo(ui.contentView)
 
 btnPlay.on('select', function () {
-  playAudio('http://static1.grsites.com/archive/sounds/cartoon/cartoon001.mp3')
+  playAudio(SOUND_1)
 })
 
 function playAudio (url) {
