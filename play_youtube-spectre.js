@@ -15,8 +15,7 @@ const mainDescription = 'Microsoft Surface Studio is a new category of device, d
 
 const footer = 'Surface Studio is designed for the creative process. The 28\u201D PixelSense\u2122 Display gives you a huge canvas for all kinds of work. Use it upright, or draw on it like a drafting table.'
 
-const htmlTemplate =
-  '<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="robots" content="index, follow"><meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no"><meta http-equiv="x-ua-compatible" content="ie=edge"><title>Spectre for Tabrisjs WebView</title><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.1/spectre.min.css"></head><body><div class="bg-gray text-center p-2"><h3>' +
+const htmlTemplate = '<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="robots" content="index, follow"><meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no"><meta http-equiv="x-ua-compatible" content="ie=edge"><title>Spectre for Tabrisjs WebView</title><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.1/spectre.min.css"></head><body><div class="bg-gray text-center p-2"><h3>' +
   mainHeading +
   '</h3><p>' +
   mainDescription +
