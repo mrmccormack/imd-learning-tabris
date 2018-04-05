@@ -48,22 +48,27 @@ const btnTextColor = btnBigger.textColor
 console.log(btnTextColor)
 const btnBackgroundColor = btnBigger.background
 console.log(btnBackgroundColor)
+const btnFont = btnBigger.font
+console.log(btnFont)
 
 btnBigger.on('select', () => {
   ui.find('.myButtons').set('layoutData', layoutPositionBig)
   console.log(btnBigger.background)
   ui.find('.myButtons').set('background', '#00f')
   ui.find('.myButtons').set('textColor', '#fff')
+  ui.find('.myButtons').set('font', 'bold 20px')
 })
 
 btnSmaller.on('select', () => {
   ui.find('.myButtons').set('layoutData', layoutPositionSmall)
   ui.find('.myButtons').set('background', '#0f0')
   ui.find('.myButtons').set('textColor', '#fff')
+  ui.find('.myButtons').set('font', 'bold 8px')
 })
 
 btnReset.on('select', () => {
   ui.find('.myButtons').set('layoutData', layoutPosition)
   ui.find('.myButtons').set('background', btnBackgroundColor)
   ui.find('.myButtons').set('textColor', btnTextColor)
+  ui.find('.myButtons').set('font', btnFont)
 })
