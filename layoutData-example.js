@@ -12,12 +12,13 @@ const { Button, TextView, ui } = require('tabris')
 
 let layoutPosition = { centerX: 0, top: 'prev() 10', width: 200 }
 
-// color top bar
 ui.background = '#1485CC'
 
+// color top bar
 new TextView({
   layoutData: layoutPosition,
-  text: 'Example of using layoutData and classes'
+  text: 'Example of using layoutData and classes',
+  font: 'bold 10px'
 }).appendTo(ui.contentView)
 
 let btnBigger = new Button({
@@ -63,5 +64,5 @@ btnSmaller.on('select', () => {
 btnReset.on('select', () => {
   ui.find('.myButtons').set('layoutData', layoutPosition)
   ui.find('.myButtons').set('background', btnBackgroundColor)
-  ui.find('.myButtons').set('textColor', 'btnTextColor')
+  ui.find('.myButtons').set('textColor', btnTextColor)
 })
