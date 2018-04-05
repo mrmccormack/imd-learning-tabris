@@ -11,11 +11,10 @@
 const { Button, TextView, ui } = require('tabris')
 
 let layoutPosition = { centerX: 0, top: 'prev() 10', width: 200 }
-const initialLayout = layoutPosition
-
-ui.background = '#1485CC'
 
 // color top bar
+ui.background = '#1485CC'
+
 new TextView({
   layoutData: layoutPosition,
   text: 'Example of using layoutData and classes'
@@ -24,13 +23,13 @@ new TextView({
 let btnBigger = new Button({
   layoutData: layoutPosition,
   class: 'myButtons',
-  text: 'Bigger buttons'
+  text: 'Bigger buttons (left)'
 }).appendTo(ui.contentView)
 
 let btnSmaller = new Button({
   layoutData: layoutPosition,
   class: 'myButtons',
-  text: 'Smaller buttons'
+  text: 'Smaller buttons (right)'
 }).appendTo(ui.contentView)
 
 let btnReset = new Button({
@@ -39,23 +38,30 @@ let btnReset = new Button({
   text: 'Reset'
 }).appendTo(ui.contentView)
 
-btnReset.on('select', () => {
-  let layoutPosition = initialLayout
-  ui.find('.myButtons').set('layoutData', layoutPosition)
-  ui.find('.myButtons').set('background', 'initial')
-  ui.find('.myButtons').set('textColor', 'initial') // initial is color only
-})
+// iOS use different default colors, so get them now
+// no work on Android... 'initial' doesn't work either
+const btnTextColor = btnBigger.textColor
+console.log(btnTextColor)
+const btnBackgroundColor = btnBigger.background
+console.log(btnBackgroundColor)
 
 btnBigger.on('select', () => {
-  let layoutPosition = { left: 0, top: 'prev() 30', width: 300 }
-  ui.find('.myButtons').set('layoutData', layoutPosition)
+  let layoutNew = { left: 0, top: 'prev() 30', width: 300 }
+  ui.find('.myButtons').set('layoutData', layoutNew)
+  console.log(btnBigger.background)
   ui.find('.myButtons').set('background', '#00f')
   ui.find('.myButtons').set('textColor', '#fff')
 })
 
 btnSmaller.on('select', () => {
-  let layoutPosition = { right: 0, top: 'prev() 5', width: 100 }
-  ui.find('.myButtons').set('layoutData', layoutPosition)
+  let layoutNew = { right: 0, top: 'prev() 5', width: 100 }
+  ui.find('.myButtons').set('layoutData', layoutNew)
   ui.find('.myButtons').set('background', '#0f0')
   ui.find('.myButtons').set('textColor', '#fff')
+})
+
+btnReset.on('select', () => {
+  ui.find('.myButtons').set('layoutData', layoutPosition)
+  ui.find('.myButtons').set('background', btnBackgroundColor)
+  ui.find('.myButtons').set('textColor', 'btnTextColor')
 })
