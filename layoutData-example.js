@@ -1,5 +1,6 @@
 /*
-  Using classes and id's
+  Mr. M.
+  Using classes and layoutData example
 
   @version:2.4.2
   Snippet url:
@@ -10,11 +11,11 @@
 
 const { Button, TextView, ui } = require('tabris')
 
-let layoutPosition = { centerX: 0, top: 'prev() 10', width: 200 }
-
-ui.background = '#1485CC'
+let layoutPosition = { centerX: 0, top: 'prev() 10', width: 180 }
 
 // color top bar
+ui.background = '#1485CC'
+
 new TextView({
   layoutData: layoutPosition,
   text: 'Example of using layoutData and classes',
@@ -47,7 +48,7 @@ const btnBackgroundColor = btnBigger.background
 console.log(btnBackgroundColor)
 
 btnBigger.on('select', () => {
-  let layoutNew = { left: 0, top: 'prev() 30', width: 300 }
+  let layoutNew = { left: 5, top: 'prev() 30', width: 300 }
   ui.find('.myButtons').set('layoutData', layoutNew)
   console.log(btnBigger.background)
   ui.find('.myButtons').set('background', '#00f')
@@ -55,7 +56,7 @@ btnBigger.on('select', () => {
 })
 
 btnSmaller.on('select', () => {
-  let layoutNew = { right: 0, top: 'prev() 5', width: 100 }
+  let layoutNew = { right: 5, top: 'prev() 5', width: 100 }
   ui.find('.myButtons').set('layoutData', layoutNew)
   ui.find('.myButtons').set('background', '#0f0')
   ui.find('.myButtons').set('textColor', '#fff')
