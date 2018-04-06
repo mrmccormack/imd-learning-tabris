@@ -17,7 +17,7 @@ let btnWait = new Button({
 }).appendTo(ui.contentView)
 
 btnWait.on('select', ({ target }) => {
-  target.text = 'Please wait ' + interval/1000 + ' seconds...'
+  target.text = 'Please wait ' + interval / 1000 + ' seconds...'
   activityIndicator.visible = true
   setTimeout(sayThanks, interval, target)
 })
