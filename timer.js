@@ -18,6 +18,7 @@ let btnWait = new Button({
 
 btnWait.on('select', ({ target }) => {
   target.text = 'Please wait ' + interval / 1000 + ' seconds...'
+  target.enabled = false
   activityIndicator.visible = true
   setTimeout(sayThanks, interval, target)
 })
@@ -25,4 +26,5 @@ btnWait.on('select', ({ target }) => {
 function sayThanks (widget) {
   activityIndicator.visible = false
   widget.text = btnText
+  widget.enabled = true
 }
