@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 
+<link rel="stylesheet" href="style.css">
 <script>
   window.addEventListener("message", function(event) {
     document.getElementById("paragraph").innerHTML = "Message received: " + event.data;
@@ -11,10 +12,11 @@
 </script>
 
 
+
 <body>
   <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
   <div id="player"></div>
-
+<h1>HELLO</h1>
   <h1>Web Messaging</h1>
     <p id="paragraph">No message received from Tabris.js</p>
     <button type="button" onclick="sendMessage()">Send Web Message</button>
