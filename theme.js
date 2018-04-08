@@ -32,7 +32,7 @@ new Picker({
   itemCount: DISPLAY_MODES.length,
   itemText: index => DISPLAY_MODES[index]
 })
-  .on('select', ({ index }) => ui.statusBar.displayMode = DISPLAY_MODES[index])
+  .on('select', ({ index }) => (ui.statusBar.displayMode = DISPLAY_MODES[index]))
   .appendTo(ui.contentView)
 
 new Picker({
@@ -42,7 +42,7 @@ new Picker({
   itemCount: BACKGROUNDS.length,
   itemText: index => BACKGROUNDS[index]
 })
-  .on('select', ({ index }) => ui.statusBar.background = BACKGROUNDS[index])
+  .on('select', ({ index }) => (ui.statusBar.background = BACKGROUNDS[index]))
   .appendTo(ui.contentView)
 
 new TextView({
