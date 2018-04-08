@@ -1,5 +1,7 @@
 const { Canvas, Button, ui, device } = require('tabris')
 
+ui.contentView.background = '#f00'
+
 // Draw shapes on a canvas using HTML5 Canvas API
 let canvas = new Canvas({ left: 10, top: 10, right: 10, bottom: 10 })
   .on('resize', ({ target: canvas, width, height }) => {
@@ -54,6 +56,7 @@ function createImageData (width, height) {
 setTimeout(sayThanks1, 2000)
 
 function sayThanks1 () {
+  ui.contentView.background = 'initial'
   canvas.visible = false
   btnMain.visible = true
 }
