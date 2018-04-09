@@ -1,9 +1,15 @@
-const { TextView, Canvas, ui, app } = require('tabris')
+const { Button, TextView, Canvas, ui, app } = require('tabris')
 // Ref: https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Drawing_shapes
 // colors from: https://brandcolors.net/  Unity
 ui.contentView.background = '#222c37'
 
-new Canvas({ left: 0, right: 0, top: 0, bottom: 0 })
+let canSplash = new Canvas({
+  left: 0,
+  right: 0,
+  top: 0,
+  bottom: 0,
+  visible: true
+})
   .on('resize', ({ target: canvas, width, height }) => {
     let ctx = canvas.getContext('2d', width, height)
     let posX = width / 2
@@ -61,3 +67,18 @@ let txvURL = new TextView({
 }).appendTo(ui.contentView)
 
 txvURL.on({ tap: () => app.launch('https://unity3d.com') })
+
+setTimeout(hideSplash, 4000)
+
+function hideSplash () {
+  ui.contentView.background = 'initial'
+  txvURL.visible = false
+  canSplash.visible = false
+  btnCount.visible = true
+}
+
+let count = 0
+
+let btnCount = new Button({ left: 10, top: 10, text: 'Button', visible: false })
+  .on('select', ({ target }) => target.text = 'Pressed ' + ++count + ' times')
+  .appendTo(ui.contentView)
