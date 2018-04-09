@@ -1,6 +1,39 @@
-const { Canvas, Button, ui, device } = require('tabris')
+const { ActivityIndicator, Canvas, Button, ui, device, app } = require('tabris')
 
-ui.contentView.background = '#f00'
+ui.contentView.background = '#3f51b5'
+
+// Create the activity indicator centered in the page
+let activityIndicator = new ActivityIndicator({ left: 0, centerY: 0 }).appendTo(
+  ui.contentView
+)
+
+ui.statusBar.background = '#f00'
+ui.statusBar.displayMode = 'default'
+
+
+// ui.statusBar.height = 40 // no work it's read only
+
+// https://tabrisjs.com/mrmccormack/apps/// Create reload button
+let reloadButton = new Button({ left: 0, top: 90, text: 'Run Task' })
+  .on('select', () => executeLongRunningTask())
+  .appendTo(ui.contentView)
+
+function executeLongRunningTask () {
+  // Toggle visibility of elements
+  activityIndicator.visible = true
+  reloadButton.visible = true
+
+  setTimeout(
+    () => {
+      // Async action is done
+      activityIndicator.visible = false
+      reloadButton.visible = true
+    },
+    2500
+  )
+}
+
+executeLongRunningTask()
 
 // Draw shapes on a canvas using HTML5 Canvas API
 let canvas = new Canvas({ left: 10, top: 10, right: 10, bottom: 10 })
@@ -33,6 +66,7 @@ new Button({ centerX: 0, centerY: 0, text: 'Press me!' })
   .on('select', ({ target }) => {
     target.text = 'Please wait...'
     setTimeout(sayThanks, 2000, target)
+    app.reload()
   })
   .appendTo(ui.contentView)
 
