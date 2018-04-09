@@ -36,7 +36,7 @@ new Canvas({ left: 0, right: 0, top: 0, bottom: 0 })
       rectHeight
     )
 
-    ctx.font = '24px'
+    ctx.font = '20px'
     ctx.fillStyle = '#fff600aa'
     ctx.textAlign = 'center'
 
