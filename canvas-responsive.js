@@ -1,4 +1,4 @@
-const { Button, TextView, Canvas, ui, app } = require('tabris')
+const { Button, Composite, TextView, Canvas, ui, app } = require('tabris')
 // Ref: https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Drawing_shapes
 // colors from: https://brandcolors.net/  Unity
 ui.contentView.background = '#222c37'
@@ -75,10 +75,29 @@ function hideSplash () {
   txvURL.visible = false
   canSplash.visible = false
   btnCount.visible = true
+  cmpMain.visible = true
 }
+
+// Create composites and append children to them
+let cmpMain = new Composite({
+  left: 0,
+  top: 0,
+  bottom: 0,
+  right: 0,
+  background: '#f3f3f3'
+}).appendTo(ui.contentView)
+
+new TextView({
+  left: 0,
+  right: 0,
+  alignment: 'center',
+  text: 'Main Application'
+}).appendTo(cmpMain)
+
+cmpMain.visible = false
 
 let count = 0
 
-let btnCount = new Button({ left: 10, top: 10, text: 'Button', visible: false })
+let btnCount = new Button({ left: 10, top: 100, text: 'Button', visible: false })
   .on('select', ({ target }) => target.text = 'Pressed ' + ++count + ' times')
-  .appendTo(ui.contentView)
+  .appendTo(cmpMain)
