@@ -10,8 +10,16 @@ function onSuccess (acceleration) {
   sldTiltZ.selection = acceleration.z * 10
   imgMarble.left = 20 * acceleration.x + 50
 
-  if (Math.round(acceleration.x) === Math.round(acceleration.y)) {
+  let xRound = acceleration.x.toFixed(1)
+  let yRound = acceleration.y.toFixed(1)
+  // console.log(xRound + ' ' + yRound)
+  if (xRound === yRound) {
     console.log('level')
+    btnLevel.textColor = 'green'
+    btnLevel.text = '* LEVEL *'
+  } else {
+    btnLevel.textColor = 'red'
+    btnLevel.text = 'Not Level'
   }
 }
 
@@ -94,6 +102,13 @@ let sldTiltZ = new Slider({
   minimum: -100,
   selection: 50,
   maximum: 100
+}).appendTo(ui.contentView)
+
+let btnLevel = new Button({
+  centerX: 0,
+  top: 'prev() 30',
+  text: 'Not Level',
+  textColor: 'red'
 }).appendTo(ui.contentView)
 
 function getFormattedDate () {
