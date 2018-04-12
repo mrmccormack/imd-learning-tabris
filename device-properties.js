@@ -1,7 +1,7 @@
-const { TextView, device, ui } = require('tabris')
+const { app, device, TextView, ui } = require('tabris')
 
 // Display available device information
-let list = [
+let propertyList = [
   'platform',
   'version',
   'model',
@@ -13,7 +13,7 @@ let list = [
   'scaleFactor'
 ]
 
-list.forEach(property => {
+propertyList.forEach(property => {
   new TextView({
     id: property,
     left: 10,
@@ -23,8 +23,21 @@ list.forEach(property => {
   }).appendTo(ui.contentView)
 })
 
+let txvURL = new TextView({
+  left: 10,
+  bottom: 20,
+  right: 10,
+  text: 'http://docs.tabris.com/latest/api/device.html',
+  textColor: '#333',
+  alignment: 'center'
+}).appendTo(ui.contentView)
+
+txvURL.on({
+  tap: () => app.launch('http://docs.tabris.com/latest/api/device.html')
+})
+
 function updateDeviceInfo () {
-  list.forEach(property => {
+  propertyList.forEach(property => {
     ui.contentView
       .find('#' + property)
       .set('text', property + ': ' + device[property])
