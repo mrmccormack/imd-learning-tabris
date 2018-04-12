@@ -1,7 +1,7 @@
-const { TextView, device, ui } = require('tabris');
+const { TextView, device, ui } = require('tabris')
 
 // Display available device information
-[
+let list = [
   'platform',
   'version',
   'model',
@@ -11,7 +11,9 @@ const { TextView, device, ui } = require('tabris');
   'screenWidth',
   'screenHeight',
   'scaleFactor'
-].forEach(property => {
+]
+
+list.forEach(property => {
   new TextView({
     id: property,
     left: 10,
@@ -22,23 +24,13 @@ const { TextView, device, ui } = require('tabris');
 })
 
 function updateDeviceInfo () {
-  [
-    'platform',
-    'version',
-    'model',
-    'vendor',
-    'language',
-    'orientation',
-    'screenWidth',
-    'screenHeight',
-    'scaleFactor'
-  ].forEach(property => {
+  list.forEach(property => {
     ui.contentView
       .find('#' + property)
       .set('text', property + ': ' + device[property])
   })
 }
 
-device.on('orientationChanged', ({ value: orientation }) => {
+device.on('orientationChanged', () => {
   updateDeviceInfo()
 })
