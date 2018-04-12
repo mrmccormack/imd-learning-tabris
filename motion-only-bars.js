@@ -84,7 +84,8 @@ let sldTiltX = new Slider({
   minimum: -100,
   selection: 50,
   maximum: 100
-}).appendTo(ui.contentView)
+}).on('selectionChanged', ({ value }) => txvTextX.text = value)
+  .appendTo(ui.contentView)
 
 let sldTiltY = new Slider({
   left: 10,
@@ -109,6 +110,15 @@ let btnLevel = new Button({
   top: 'prev() 30',
   text: 'Not Level',
   textColor: 'red'
+}).appendTo(ui.contentView)
+
+let txvTextX = new TextView({
+  left: 10,
+  right: 10,
+  top: '30%',
+  alignment: 'center',
+  font: '22px sans-serif',
+  text: '50'
 }).appendTo(ui.contentView)
 
 function getFormattedDate () {
