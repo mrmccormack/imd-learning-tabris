@@ -19,7 +19,8 @@ propertyList.forEach(property => {
     left: 10,
     right: 10,
     top: 'prev() 10',
-    text: property + ': ' + device[property]
+    markupEnabled: true,
+    text: property + ': <strong>' + device[property] + '</strong>'
   }).appendTo(ui.contentView)
 })
 
@@ -40,7 +41,7 @@ function updateDeviceInfo () {
   propertyList.forEach(property => {
     ui.contentView
       .find('#' + property)
-      .set('text', property + ': ' + device[property])
+      .set('text', property + ': <strong>' + device[property] + '</strong>')
   })
 }
 
