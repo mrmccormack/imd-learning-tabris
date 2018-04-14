@@ -1,4 +1,4 @@
-const { app, device, TextView, ui } = require('tabris')
+const { app, Button, device, TextView, ui } = require('tabris')
 
 // Display available device information
 let propertyList = [
@@ -24,17 +24,17 @@ propertyList.forEach(property => {
   }).appendTo(ui.contentView)
 })
 
-let txvURL = new TextView({
-  left: 10,
+
+
+let btnSourceCode = new Button({
   bottom: 20,
-  right: 10,
-  text: 'http://docs.tabris.com/latest/api/device.html',
-  textColor: '#333',
-  alignment: 'center'
+  centerX: 0,
+  image: 'https://raw.githubusercontent.com/mrmccormack/imd-learning-tabris/master/images/github-32.png',
+  text: ' View JS source'
 }).appendTo(ui.contentView)
 
-txvURL.on({
-  tap: () => app.launch('http://docs.tabris.com/latest/api/device.html')
+btnSourceCode.on({
+  select: () => app.launch('http://docs.tabris.com/latest/api/device.html')
 })
 
 function updateDeviceInfo () {
