@@ -1,34 +1,31 @@
 const { Button, ImageView, ui } = require('tabris')
 
-function takePicture () {
+const widthPhoto = 300
+const heightPhoto = 400
+
+function takePhoto () {
   let onSuccess = image => imgPhoto.image = image
   let onFail = message => console.log('Camera failed because: ' + message)
   navigator.camera.getPicture(onSuccess, onFail, {
     quality: 50,
-    targetWidth: 1024,
-    targetHeight: 1024,
+    targetWidth: widthPhoto,
+    targetHeight: heightPhoto,
     destinationType: window.Camera.DestinationType.FILE_URI
   })
 }
 
-let btnShutter = new Button({
-  id: 'pictureButton',
-  centerX: 0,
-  top: 'prev() 10',
-  width: 100,
-  text: 'Tacke Picture'
-})
+let btnShutter = new Button({ centerX: 0, top: 40, text: 'Take Picture' })
   .on('select', () => {
-    console.log('hi')
-    takePicture()
-  })
-  .appendTo(ui.contentView)
+    takePhoto()
+  }).appendTo(ui.contentView)
 
 let imgPhoto = new ImageView({
   top: 'prev() 10',
   class: 'image',
-  width: 200,
-  height: 200,
+  width: widthPhoto,
+  height: heightPhoto,
   centerX: 0,
+  image: 'https://raw.githubusercontent.com/mrmccormack/imd-learning-tabris/master/images/photo.png',
+  scaleMode: 'fit',
   zoomEnabled: true
 }).appendTo(ui.contentView)
