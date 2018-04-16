@@ -27,7 +27,8 @@ let btnShutter = new Button({
 let imgPhoto = new ImageView({
   top: 'prev() 10',
   class: 'image',
-  width: 100,
-  height: 100,
-  centerX: 0
+  width: 200,
+  height: 200,
+  centerX: 0,
+  zoomEnabled: true
 }).appendTo(ui.contentView)
