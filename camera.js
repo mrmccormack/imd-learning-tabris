@@ -16,6 +16,7 @@ function takePhoto () {
   let onFail = message => console.log('Camera failed because: ' + message)
   navigator.camera.getPicture(onSuccess, onFail, {
     saveToPhotoAlbum: true,
+    allowEdit: true,
     quality: 50,
     targetWidth: widthPhoto,
     targetHeight: heightPhoto,
