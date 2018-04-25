@@ -14,14 +14,10 @@ propertyList.forEach(property => {
   }).appendTo(ui.contentView)
 })
 
-function updateDeviceInfo () {
+device.on('orientationChanged', () => {
   propertyList.forEach(property => {
     ui.contentView
       .find('#' + property)
       .set('text', property + ': <strong>' + device[property] + '</strong>')
   })
-}
-
-device.on('orientationChanged', () => {
-  updateDeviceInfo()
 })
