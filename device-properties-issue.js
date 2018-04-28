@@ -1,6 +1,6 @@
 const { app, device, TextInput, ui } = require('tabris')
 
-// Display available device information
+// Display available device information for submtting issues
 let propertyList = [
   'platform',
   'version',
