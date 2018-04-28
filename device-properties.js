@@ -25,18 +25,6 @@ propertyList.forEach(property => {
 })
 
 
-
-let btnSourceCode = new Button({
-  bottom: 20,
-  centerX: 0,
-  image: 'https://raw.githubusercontent.com/mrmccormack/imd-learning-tabris/master/images/github-32.png',
-  text: ' View JS source'
-}).appendTo(ui.contentView)
-
-btnSourceCode.on({
-  select: () => app.launch('http://docs.tabris.com/latest/api/device.html')
-})
-
 function updateDeviceInfo () {
   propertyList.forEach(property => {
     ui.contentView
