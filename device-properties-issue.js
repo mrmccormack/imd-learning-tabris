@@ -3,6 +3,7 @@ const { app, device, TextInput, ui } = require('tabris')
 // https://tinyurl.com/tabris-device
 // https://tabrisjs.com/api/v1/pins/5ae5025bee64b0e4dfbcc190  public
 // Display available device information for submtting issues
+
 let propertyList = [
   'platform',
   'version',
