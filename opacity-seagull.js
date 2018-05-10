@@ -1,8 +1,18 @@
-const { ui, ImageView} = require('tabris');
+const { Button, ui, ImageView} = require('tabris');
 // example of images side by side - Matt.
 
 const IMAGE_PATH = 'https://mrmccormack.github.io/imd-learning-tabris/images/';
 const DICE_OFFSET = 30;
+
+let btnOpacity = new Button({ centerX: 0, top: 40, text: 'Take Picture' })
+  .on('select', () => {
+    takePhoto()
+  })
+  .on('longpress', () => {
+    takeMonkey()
+  })
+  .appendTo(ui.contentView)
+
 
 let diceImage1 = new ImageView({
   centerY: 0,
