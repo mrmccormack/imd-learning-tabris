@@ -21,7 +21,7 @@ let sharpPhoto = new ImageView({
 let blurPhoto = new ImageView({
   centerY: 0,
   width: 200,
-  opacity: 0.4,
+  opacity: 1.0,
   centerX: DICE_OFFSET,
   image: IMAGE_PATH + 'seagull-1900657_640-blur.jpg'
 
