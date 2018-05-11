@@ -26,4 +26,15 @@ let blurPhoto = new ImageView({
   image: IMAGE_PATH + 'seagull-1900657_640-blur.jpg'
 
 }).appendTo(ui.contentView);
-      
+     
+
+let blurBackground = new ImageView({
+  centerY: 0,
+  centerX: 0,
+  opacity: 0.4,
+  scaleMode: 'fill',
+
+  image: IMAGE_PATH + 'seagull-1900657_640-blur.jpg'
+
+}).appendTo(ui.contentView);
+
